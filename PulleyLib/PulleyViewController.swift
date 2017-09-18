@@ -111,6 +111,8 @@ open class PulleyViewController: UIViewController {
   public let drawerScrollView: PulleyPassthroughScrollView = PulleyPassthroughScrollView()
   public let backgroundDimmingView: UIView = UIView()
 
+  public var primaryContentContainerTop: CGFloat = 74.0
+
   fileprivate var dimmingViewTapRecognizer: UITapGestureRecognizer?
 
   fileprivate var lastDragTargetContentOffset: CGPoint = CGPoint.zero
@@ -486,7 +488,7 @@ open class PulleyViewController: UIViewController {
     }
 
     // Layout main content
-    primaryContentContainer.frame = CGRect(x: 0.0, y: 74.0, width: self.view.bounds.width, height: self.view.bounds.height - 74.0)
+    primaryContentContainer.frame = CGRect(x: 0.0, y: primaryContentContainerTop, width: self.view.bounds.width, height: self.view.bounds.height - primaryContentContainerTop)
     backgroundDimmingView.frame = self.view.bounds
 
     // Layout container
